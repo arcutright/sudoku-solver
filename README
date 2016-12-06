@@ -34,3 +34,8 @@ difficult to track for the 17-thread solution, so I've only included it
 in the single-threaded implementations for curiosity. The two actual
 algorithms I wrote were a horizontal solve algorithm and a diagonal solve
 algorithm (diagonals are like traces). 
+
+I also include the running time for each method I've decided to use.
+eecslinab3 reports time values as all 0.00ms, not sure why. It is
+either much faster than my chromebook or time.h doesn't work on it for
+some reason
