@@ -1,19 +1,15 @@
 ============================== USAGE =====================================
 type 'make' to compile and './sudoku-solver' to run. You can change the
 sudoku board to solve in the 'file/in.txt' (only the first 9 lines are
-used). For the final version, I will likely allow either N boards in the
-input file or N input files.
+used).
 
 =================== EXAMPLE OUTPUT AND HOW TO READ =======================
 $ ./sudoku-solver 
-correct solution: true (2 tries)
-time taken: 0.05ms (horizontal solve, 1 thread)
-correct solution: true (1 tries)
-time taken: 0.01ms (diagonal solve, 1 thread)
-correct solution: true
-time taken: 0.93ms (horizontal solve, 10 threads)
-correct solution: true
-time taken: 1.22ms (diagonal solve, 17 threads)
+reading from file: 'file/in.txt'
+time taken: 0.09ms (horizontal solve, 1 thread) correct solution: true
+time taken: 0.14ms (diagonal solve, 1 thread) correct solution: true
+time taken: 0.94ms (horizontal solve, 9 threads) correct solution: true
+time taken: 1.05ms (diagonal solve, 17 threads) correct solution: true
 x x x 2 6 x 7 x 1       4 3 5 2 6 9 7 8 1 
 6 8 x x 7 x x 9 x       6 8 2 5 7 1 4 9 3 
 1 9 x x x 4 5 x x       1 9 7 8 3 4 5 6 2 
@@ -23,17 +19,14 @@ x 5 x x x 3 x 2 8       9 5 1 7 4 3 6 2 8
 x x 9 3 x x x 7 4       5 1 9 3 2 6 8 7 4 
 x 4 x x 5 x x 3 6       2 4 8 9 5 7 1 3 6 
 7 x 3 x 1 8 x x x       7 6 3 4 1 8 2 5 9 
+writing to file: 'file/out.txt'
 
-Each pair of lines in the beginning shows the results of various methods
-I've implemented for trying to solve sudoku boards, ranging from single-
+Each line in the beginning shows the results of various methods I've 
+implemented for trying to solve sudoku boards, ranging from single-
 threaded to a fairly ludicrous 17-thread solution. The "correct solution"
-line tells you if that method gave a valid sudoku board as a solution to
-the problem, and the number of tries applies to how many repetitions it
-took running in a single thread. Obviously, this information would be
-difficult to track for the 17-thread solution, so I've only included it
-in the single-threaded implementations for curiosity. The two actual
-algorithms I wrote were a horizontal solve algorithm and a diagonal solve
-algorithm (diagonals are like traces). 
+indicates if that method gave a valid sudoku board as a solution to
+the problem. The two actual algorithms I wrote were a horizontal solve 
+algorithm and a diagonal solve algorithm (diagonals are like traces). 
 
 I also include the running time for each method I've decided to use.
 eecslinab3 reports time values as all 0.00ms, not sure why. It is
